@@ -1,0 +1,22 @@
+<html>
+	<head>
+		<title>Luna Admin Control Panel</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" type="text/css" href="/static/theme.css">
+		<link rel=“preload” href=“/static/neon_pixel-7.ttf” as=“font”>
+		<link rel=“preload” href=“/static/FSEX300.ttf” as=“font”>
+	</head>
+	<body>
+		<form action="/adm/update" method="post" enctype="multipart/form-data">
+			<input type="hidden" value="<%= admin_data.uuid %>" name="uuid">
+			Name: <input value="<%= admin_data.name %>" name="name"><br>
+			Color: <input value="<%= admin_data.color %>" name="color"><br>
+			<button type="submit">Submit</button>
+		</form><br>
+		<form action="/adm/passwd" method="post" enctype="multipart/form-data">
+			<input type="hidden" value="<%= admin_data.uuid %>" name="uuid">
+			Password: <input type="password" name="pass"><br>
+			<button type="submit">Submit</button>
+		</form>
+	</body>
+</html>

@@ -1,0 +1,26 @@
+<% local stk = 0 %>
+<html>
+	<head>
+		<title>Luna/<%= board %>/ - <%= boards[board].webtitle %></title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" type="text/css" href="/static/theme.css">
+		<link rel=“preload” href=“/static/neon_pixel-7.ttf” as=“font”>
+		<link rel=“preload” href=“/static/FSEX300.ttf” as=“font”>
+	</head>
+	<body>
+		<div> [ <% for i=1, #boards do %> <a href="/<%= boards[i] %>/">/<%= boards[i] %>/</a> <% end %><a href="/all/">/all/</a> ] </div>
+		<div class="Header"><a href=".."><%= boards[board].name %></a></div>
+		<div style="font-size: 30pt"><%= boards[board].desc %></div>
+		<% if board ~= "all" then %><a href="post">New Thread</a> | <% end %><a href=".">Refresh</a><br><br>
+		<% if (#threads < 1) then %>
+			Empty directory.
+		<% else %>
+			<% for i=1, #threads do %>
+				<% if authed then %> <span class="admlink"><%= threads[i].op %></span> <a style="color:red" href="/adm/del?id=<%= string.format("%x", threads[i].id) %>&board=<%= threads[i].board %>">D</a> <a style="color:grey" href="/adm/lock?id=<%= string.format("%x", threads[i].id) %>&board=<%= threads[i].board %>">L</a><% end %>
+				<a href="<%= string.format("/%s/%x", threads[i].board, threads[i].id) %>" <% if threads[i].stickyval > 0 then stk = stk + 1 %>style="color:hsl(<%= ((threads[i].stickyval * (3000/255))+(stk*2)) % 360 %>, 100%, 50%)" <% elseif (threads[i].locked) then %>style="color:#999"<% end %> ><%= threads[i].name %></a>
+				<% if board == "all" then %>/<%= threads[i].board %>/<% end %>
+				<br>
+			<% end %>
+		<% end %>
+	</body>
+</html>

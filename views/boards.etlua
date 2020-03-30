@@ -1,0 +1,16 @@
+<html>
+	<head>
+		<title>Luna - Late Night Shitposting Mk2</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" type="text/css" href="/static/theme.css">
+		<link rel=“preload” href=“/static/neon_pixel-7.ttf” as=“font”>
+		<link rel=“preload” href=“/static/FSEX300.ttf” as=“font”>
+	</head>
+	<body>
+		<div class="Header" id="lunaheader" style="font-size: 100pt">Luna</div>
+		<% for i=1, #boards do %>
+			<a href="<%= boards[i] %>/">/<%= boards[i] %>/ - <%= boards[boards[i]].name %></a><br>
+		<% end %>
+		<a href="all/">/all/ - <%= boards.all.name %></a>
+	</body>
+</html>

@@ -1,0 +1,90 @@
+# Example default configuration
+[database]
+server = "127.0.0.1"
+user = "luna"
+password = "my password" # You should probably set up a password...
+dbname = "luna"
+
+[boards]
+
+	[boards.a]
+	name = "Anime"
+	desc = "Weebshit here"
+	webtitle = "you are already dead"
+
+	[boards.l]
+	name = "Random"
+	desc = "God is dead and we killed him"
+	webtitle = "wtf is a poland"
+
+	[boards.u]
+	name = "Creative"
+	desc = "Not to be confused with danger/u/"
+	webtitle = "Made by u!"
+
+	[boards.s]
+	name = "Memes"
+	desc = "Random and quirky XDD"
+	webtitle = "God is dead and we killed him"
+
+	[boards.e]
+	name = "Porn"
+	desc = "I will literally fucking IP ban people who post CP"
+	webtitle = "no more inflation i swear to god"
+
+	[boards.x]
+	name = "Meta"
+	desc = "Discuss Luna"
+	webtitle = "It's shit."
+	
+	[boards.t]
+	name = "Tech and programming"
+	desc = "Killer roombas"
+	webtitle = "Remember when Steve Jobs died?"
+
+	[boards.p]
+	name = "Politics"
+	desc = "Literally worse than furry porn."
+	webtitle = "Serbia world superpower by 2030"
+
+	[boards.txt]
+	name = "Text"
+	desc = "There is only text"
+	webtitle = "The only place safe from porn."
+	noimg = true
+
+	[boards.v]
+	name = "Video Games"
+	desc = "The only place for vijya"
+	webtitle = "bizon ace bizon ace"
+
+	[boards.all]
+	name = "All"
+	desc = "I can see EVERYTHING"
+	webtitle = "unleash the third eye"
+
+[post_processing]
+gen_thumb = true
+greentext = true
+markdown = "*"
+replies = true
+
+[auth]
+password_rounds = 10
+secret = "" # Set this up!
+session_name = "luna"
+
+[general]
+board_listing = [
+	"l",
+	"u",
+	"a",
+	"s",
+	"e",
+	"x",
+	"t",
+	"v",
+	"p",
+	"txt"
+]
+imgdir = "img"

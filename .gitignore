@@ -1,0 +1,13 @@
+uwsgi_temp/**
+scgi_temp/**
+proxy_temp/**
+logs/**
+fastcgi_temp/**
+client_body_temp/**
+static/FSEX300.ttf
+static/neon_pixel-7.ttf
+img/**
+nginx.conf.compiled
+thumbs/**
+logs/**
+config.toml

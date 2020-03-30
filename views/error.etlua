@@ -1,0 +1,14 @@
+<html>
+	<head>
+		<title>Luna/0x<%= title_hex %>/ - Kernel Panic!</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" type="text/css" href="/static/theme.css">
+		<link rel=“preload” href=“/static/neon_pixel-7.ttf” as=“font”>
+		<link rel=“preload” href=“/static/FSEX300.ttf” as=“font”>
+	</head>
+	<body class="err">
+		[<%= os.clock() %>] panic!: <%= err %><br>
+		[<%= os.clock() %>] kver: <%= luna_ver %> ip: <%= ip %> path: <%= path %> host: <%= hostaddr %> method: <%= method %>
+		<%- trace:gsub("\t", "&nbsp;&nbsp;&nbsp;&nbsp;"):gsub("\n", "<br>["..os.clock().."] ") -%>
+	</body>
+</html>
